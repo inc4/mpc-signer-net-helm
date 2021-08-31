@@ -1,6 +1,6 @@
 apiVersion: v2
-name: mpc-net-module-helm
-description: A Helm chart for Kubernetes
+name: mpc-signer-net-helm
+description: A net module helm chart for mpc signer
 
 # A chart can be either an 'application' or a 'library' chart.
 #
