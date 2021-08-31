@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: "{{ include "mpc-net-module-helm.fullname" . }}-test-connection"
+  labels:
+    {{- include "mpc-net-module-helm.labels" . | nindent 4 }}
+  annotations:
+    "helm.sh/hook": test
+spec:
+  containers:
+    - name: wget
+      image: busybox
+      command: ['wget']
+      args: ['{{ include "mpc-net-module-helm.fullname" . }}:{{ .Values.service.port }}']
+  restartPolicy: Never

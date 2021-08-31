@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "mpc-net-module-helm.fullname" . }}
+  labels:
+    {{- include "mpc-net-module-helm.labels" . | nindent 4 }}
+spec:
+  type: {{ .Values.service.type }}
+  ports:
+    - port: {{ .Values.service.port }}
+      targetPort: http
+      protocol: TCP
+      name: http
+  selector:
+    {{- include "mpc-net-module-helm.selectorLabels" . | nindent 4 }}
