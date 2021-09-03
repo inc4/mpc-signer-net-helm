@@ -38,9 +38,9 @@ spec:
           - name: web
             value: {{ .Values.env.web }}
           - name: VAULTS_IPS
-            value: "{{ .Release.Name }}-{{ .Values.env.vault-address }}@{{ .Values.env.vault-token }}"
+            value: "{{ .Release.Name }}-{{ .Values.env.vaultAddress }}@{{ .Values.env.vaultToken }}"
           - name: TRUSTY_IP
-            value: "{{ .Values.env.trustee-address }}@{{ .Values.env.trustee-token }}"
+            value: "{{ .Values.env.trusteeAddress }}@{{ .Values.env.trusteeToken }}"
 
           securityContext:
             {{- toYaml .Values.securityContext | nindent 12 }}

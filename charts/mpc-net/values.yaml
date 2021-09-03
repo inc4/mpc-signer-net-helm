@@ -49,10 +49,10 @@ pod:
     - /mpc-signer/build/demo
   env:
     web: "1"
-    vault-address: vault-internal:8200
-    vault-token: root
-    trustee-address: trustee-vault:8200
-    trustee-token: root
+    vaultAddress: vault-internal:8200
+    vaultToken: root
+    trusteeAddress: trustee-vault:8200
+    trusteeToken: root
 
 ingress:
   enabled: false
