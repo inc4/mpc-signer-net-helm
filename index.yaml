@@ -3,6 +3,16 @@ entries:
   mpc-net:
   - apiVersion: v2
     appVersion: 1.16.0
+    created: "2021-09-03T11:29:13.355859944Z"
+    description: A net module helm chart for mpc signer
+    digest: cc90a7ace2b9ab9554dfc6c53f2f397752a07944e6e63bca02b1b0b6520dae8c
+    name: mpc-net
+    type: application
+    urls:
+    - https://github.com/inc4/mpc-signer-net-helm/releases/download/mpc-net-0.1.5/mpc-net-0.1.5.tgz
+    version: 0.1.5
+  - apiVersion: v2
+    appVersion: 1.16.0
     created: "2021-09-03T11:12:37.568814752Z"
     description: A net module helm chart for mpc signer
     digest: 0dc74c3036a539c05591c653cabe2c152c1b616c9d88a65bbedab989c94a5c31
