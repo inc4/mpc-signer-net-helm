@@ -48,12 +48,11 @@ pod:
   extraArgs:
     - /mpc-signer/build/demo
   env:
-    - name: web
-      value: "1"
-    - name: VAULTS_IPS
-      value: "http://vault:8200@root"
-    - name: TRUSTY_IP
-      value: "http://trustee-vault:8200@root"
+    web: "1"
+    vault-address: vault-internal:8200
+    vault-token: root
+    trustee-address: trustee-vault:8200
+    trustee-token: root
 
 ingress:
   enabled: false
