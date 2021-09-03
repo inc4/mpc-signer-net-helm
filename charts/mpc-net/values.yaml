@@ -4,6 +4,8 @@
 
 replicaCount: 1
 
+enabled: true
+
 image:
   repository: ghcr.io/november-pain/mpc-signer_net
   pullPolicy: IfNotPresent
