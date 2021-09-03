@@ -36,11 +36,11 @@ spec:
             {{- toYaml .Values.pod.extraArgs | nindent 12 }}
           env:
           - name: web
-            value: {{ .Values.env.web }}
+            value: {{ .Values.pod.env.web }}
           - name: VAULTS_IPS
-            value: "{{ .Release.Name }}-{{ .Values.env.vaultAddress }}@{{ .Values.env.vaultToken }}"
+            value: "{{ .Release.Name }}-{{ .Values.pod.env.vaultAddress }}@{{ .Values.pod.env.vaultToken }}"
           - name: TRUSTY_IP
-            value: "{{ .Values.env.trusteeAddress }}@{{ .Values.env.trusteeToken }}"
+            value: "{{ .Values.pod.env.trusteeAddress }}@{{ .Values.pod.env.trusteeToken }}"
 
           securityContext:
             {{- toYaml .Values.securityContext | nindent 12 }}
