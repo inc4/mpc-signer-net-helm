@@ -38,10 +38,16 @@ spec:
           env:
           - name: web
             value: "{{ .Values.pod.env.web }}"
-          - name: VAULTS_IPS
-            value: "http://{{ .Release.Name }}-{{ .Values.pod.env.vaultAddress }}@{{ .Values.pod.env.vaultToken }}"
-          - name: TRUSTY_IP
-            value: "http://{{ .Values.pod.env.trusteeAddress }}@{{ .Values.pod.env.trusteeToken }}"
+          - name: VAULT_ACTIVE_ADDR
+            value: "{{ .Values.pod.env.vaultActiveAddress }}"
+          - name: VAULT_STANDBY_ADDR
+            value: "{{ .Values.pod.env.vaultStandbyAddress }}"
+          - name: VAULT_MAIN_TOKEN
+            value: "{{ .Values.pod.env.vaultToken }}"
+          - name: VAULT_TRUSTEE_ADDR
+            value: "{{ .Values.pod.env.trusteeAddress }}"
+          - name: VAULT_TRUSTEE_TOKEN
+            value: "{{ .Values.pod.env.trusteeToken }}"
 
           securityContext:
             {{- toYaml .Values.securityContext | nindent 12 }}

@@ -7,15 +7,15 @@ replicaCount: 1
 enabled: true
 
 image:
-  repository: ghcr.io/november-pain/mpc-signer_net
+  repository: registry.gitlab.com/hiveon/custody/mpc-signer/mpc-signer_net
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
   tag: "latest"
 
 imagePullSecrets: 
-  - name: ghr-cred
+  - name: gitlab-cr-token
 
-nameOverride: ""
+nameOverride: "mpc-net"
 fullnameOverride: ""
 
 serviceAccount:
@@ -51,9 +51,10 @@ pod:
     - /mpc-signer/build/demo
   env:
     web: "1"
-    vaultAddress: vault-internal:8200
+    vaultActiveAddress: http://vault-active.vault:8200
+    vaultStandbyAddress: http://vault-standby.vault:8200
     vaultToken: root
-    trusteeAddress: trustee-vault:8200
+    trusteeAddress: http://trustee-vault-active.vault:8200
     trusteeToken: root
 
 ingress:
