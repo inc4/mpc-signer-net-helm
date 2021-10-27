@@ -2,5 +2,5 @@ apiVersion: v2
 name: mpc-net
 description: A net module helm chart for mpc signer
 type: application
-version: 0.1.8
+version: 0.1.9
 appVersion: "1.16.0"
